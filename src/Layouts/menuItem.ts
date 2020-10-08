@@ -6,7 +6,7 @@ const items: MenuItemType[] = [
     icon: { name: 'home' },
     link: { to: '/dashboard' },
   },
-  {
+  /* {
     title: 'FEATURES',
     group: true,
   },
@@ -157,6 +157,20 @@ const items: MenuItemType[] = [
       {
         title: 'Reset Password',
         link: { to: '/auth/reset-password' },
+      },
+    ],
+  },*/
+  {
+    title: 'Restaurant',
+    icon: { name: 'star-outline' },
+    children: [
+      {
+        title: 'Restaurant List',
+        link: { to: '/restaurants/restaurantList' },
+      },
+      {
+        title: 'Add New Restaurant',
+        link: { to: '/restaurants/restaurantList' },
       },
     ],
   },

@@ -107,10 +107,11 @@ const Header: React.FC<HeaderProps> = (props) => {
             {
               content: (
                 <Link to="/" className="logo">
-                  Admin Template
+                  Owl Dhaka
                 </Link>
               ),
             },
+
             {
               content: (
                 <SelectStyled
@@ -123,27 +124,30 @@ const Header: React.FC<HeaderProps> = (props) => {
                 />
               ),
             },
-            {
+
+            /* {
               content: (
                 <Button size="Small" onClick={() => props.changeDir()}>
                   {props.dir}
                 </Button>
               ),
-            },
+            }, */
           ]}
         />
         <Actions
           size="Small"
           className="right"
           actions={[
-            {
+            /* {
               icon: 'github',
               url: { href: 'https://github.com/paljs/gatsby-admin-template', target: '_blank' },
             },
-            {
+            */
+            /* {
               icon: 'twitter',
               url: { href: 'https://twitter.com/AhmedElywh', target: '_blank' },
             },
+            */
             {
               content: (
                 <Location>
@@ -158,7 +162,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                       ]}
                       Link={Link}
                     >
-                      <User image="url('/icons/icon-72x72.png')" name="Ahmed Elywa" title="Manger" size="Medium" />
+                      <User image="url('/icons/icon-72x72.png')" name="Admin" title="Manger" size="Medium" />
                     </ContextMenu>
                   )}
                 </Location>
