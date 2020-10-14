@@ -6,7 +6,7 @@ const items: MenuItemType[] = [
     icon: { name: 'home' },
     link: { to: '/dashboard' },
   },
-  /* {
+  /*{
     title: 'FEATURES',
     group: true,
   },
@@ -60,7 +60,8 @@ const items: MenuItemType[] = [
       },
     ],
   },
-  {
+  */
+  /*{
     title: 'Forms',
     icon: { name: 'edit-2-outline' },
     children: [
@@ -68,6 +69,7 @@ const items: MenuItemType[] = [
         title: 'Inputs',
         link: { to: '/forms/inputs' },
       },
+      
       {
         title: 'Layout',
         link: { to: '/forms/form-layout' },
@@ -82,6 +84,8 @@ const items: MenuItemType[] = [
       },
     ],
   },
+  */
+  /*
   {
     title: 'UI Features',
     icon: { name: 'keypad-outline' },
@@ -159,7 +163,12 @@ const items: MenuItemType[] = [
         link: { to: '/auth/reset-password' },
       },
     ],
-  },*/
+  },
+  */
+
+
+
+  
   {
     title: 'Restaurant',
     icon: { name: 'star-outline' },
@@ -170,10 +179,68 @@ const items: MenuItemType[] = [
       },
       {
         title: 'Add New Restaurant',
-        link: { to: '/restaurants/restaurantList' },
+        link: { to: '/restaurants/AddRestaurants' },
       },
     ],
   },
+  {
+    title: 'Food Item',
+    icon: { name: 'star-outline' },
+    children: [
+      
+      {
+        title: 'Food Category',
+        link: { to: '/FoodCategory/FoodCategoryList' },
+      },
+      {
+        title: 'Add Food Category',
+        link: { to: '/FoodCategory/AddFoodCategory' },
+      },
+      {
+        title: 'Food Item List',
+        link: { to: '/FoodItem/FoodItemList' },
+      },
+      {
+        title: 'Add New Food Item',
+        link: { to: '/FoodItem/AddFoodItem' },
+      },
+    ],
+  },
+  
+  {
+    title: 'Order',
+    icon: { name: 'star-outline' },
+    children: [
+      {
+        title: 'Order List',
+        link: { to: '/Order/OrderList' },
+      },
+      {
+        title: 'New Orders',
+        link: { to: '/restaurants/restaurantList' },
+      },
+      {
+        title: 'manually add order',
+        link: { to: '/restaurants/AddRestaurants' },
+      },
+    ],
+  },
+  {
+    title: 'Report & Feedback',
+    icon: { name: 'star-outline' },
+    children: [
+      {
+        title: 'rating & Feedback',
+        link: { to: '/Order/OrderList' },
+      },
+      {
+        title: 'report',
+        link: { to: '/restaurants/restaurantList' },
+      },
+      
+    ],
+  },
+
 ];
 
 export default items;
