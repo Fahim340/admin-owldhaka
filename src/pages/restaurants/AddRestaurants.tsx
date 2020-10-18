@@ -38,7 +38,7 @@ const AddRestaurants = () => {
       <Row>
         <Col breakPoint={{ xs: 12, md: 6 }}>
           <Card>
-            <header>Input status</header>
+            <header>Add Restaurants</header>
             <CardBody>
               <Input fullWidth size="Small">
                 <input type="text" placeholder="Name" />
@@ -47,7 +47,13 @@ const AddRestaurants = () => {
                 <input type="text" placeholder="Category" />
               </Input>
               <Input fullWidth size="Medium">
+                <input type="text" placeholder="Owner" />
+              </Input>
+              <Input fullWidth size="Medium">
                 <input type="text" placeholder="Contact Number" />
+              </Input>
+              <Input fullWidth size="Medium">
+                <input type="text" placeholder="Additional Contact Number" />
               </Input>
               <Input fullWidth size="Medium">
                 <input type="text" placeholder="Closing Time" />
@@ -58,14 +64,17 @@ const AddRestaurants = () => {
               <Input fullWidth shape="Rectangle">
                 <input type="text" placeholder="Address" />
               </Input>
-              
-              
-              
-              
+              <Input fullWidth size="Medium">
+                <input type="file" id="img" name="img" accept="image/*" />
+                <label for="fileupload"> ( Upload Restaurants Image )</label>
+              </Input>
+
+              <Input fullWidth shape="Round">
+                <textarea rows={5} placeholder="Description" />
+              </Input>
             </CardBody>
           </Card>
         </Col>
-        
       </Row>
     </>
   );

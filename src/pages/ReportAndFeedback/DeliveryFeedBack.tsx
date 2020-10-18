@@ -11,6 +11,8 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Grid from '@material-ui/core/Grid';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import DetailsIcon from '@material-ui/icons/Details';
+import ButtonBase from '@material-ui/core/ButtonBase';
 
 const useStyles = makeStyles({
   table: {
@@ -19,17 +21,17 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(id, item_name, food_category, restaurant, food_image, description) {
-  return { id, item_name, food_category, restaurant, food_image, description };
+function createData(id, customer_number, order_id, delivery_man_id, delivery_man, rating, feed_back) {
+  return { id, customer_number, order_id, delivery_man_id, delivery_man, rating, feed_back };
 }
 
 const rows = [
-  createData('1', 'Beef Chap', 'Kebab', 'Bismillah', 'image', 'description'),
-  createData('1', 'Beef Chap', 'Kebab', 'Bismillah', 'image', 'description'),
-  createData('1', 'Beef Chap', 'Kebab', 'Bismillah', 'image', 'description'),
+  createData('1', '01676217481', '12', '01', 'Sulaman', '5', 'Good'),
+  createData('1', '01676217481', '12', '01', 'Sulaman', '5', 'Good'),
+  createData('1', '01676217481', '12', '01', 'Sulaman', '5', 'Good'),
 ];
 
-export default function FoodItemList() {
+export default function DeliveyFeedBack() {
   const classes = useStyles();
 
   return (
@@ -39,17 +41,25 @@ export default function FoodItemList() {
           <TableRow>
             <TableCell style={{ color: 'white' }}>ID</TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
-              Item Name
+              Customer Contact Number
             </TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
-              Food Caregory
+              Order ID
             </TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
-              Food Image
+              Delivery Man ID
             </TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
-              Description
+              Delivery Man
             </TableCell>
+            <TableCell align="right" style={{ color: 'white' }}>
+              Rating
+            </TableCell>
+
+            <TableCell align="right" style={{ color: 'white' }}>
+              Feed Back
+            </TableCell>
+
             <TableCell align="right" style={{ color: 'white' }}>
               Action
             </TableCell>
@@ -62,21 +72,28 @@ export default function FoodItemList() {
                 {row.id}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.item_name}
+                {row.customer_number}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.food_category}
+                {row.order_id}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.food_image}
+                {row.delivery_man_id}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.description}
+                {row.delivery_man}
               </TableCell>
+              <TableCell align="right" style={{ color: 'white' }}>
+                {row.rating}
+              </TableCell>
+              <TableCell align="right" style={{ color: 'white' }}>
+                {row.feed_back}
+              </TableCell>
+
               <TableCell align="right" style={{ color: 'white' }}>
                 {
                   <Grid item xs={8}>
-                    <EditIcon /> <VisibilityOffIcon />
+                    <EditIcon />
                     <DeleteIcon />
                   </Grid>
                 }

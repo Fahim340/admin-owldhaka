@@ -14,26 +14,24 @@ import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import DetailsIcon from '@material-ui/icons/Details';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
-
-
 const useStyles = makeStyles({
   table: {
-    background: '#202842',
+    background: '#232b45',
     minWidth: 650,
   },
 });
 
-function createData(id, restaurant_id, rating, review, report) {
-            return {id, restaurant_id, rating, review, report};
+function createData(id, customer_number, order_id, feed_back) {
+  return { id, customer_number, order_id, feed_back };
 }
 
 const rows = [
-  createData('1', '2', 'Hazi', '4.5' ),
-  createData('2', '23', 'Hanif', '4.2' ),
-  createData('3, '2', 'Bismillah', '4.7' ),
+  createData('1', '01676217481', '12', 'Good'),
+  createData('2', '01676217481', '33', 'Bhalo na'),
+  createData('3', '01676217481', '23', 'supper'),
 ];
 
-export default function OrderList() {
+export default function FeedBack() {
   const classes = useStyles();
 
   return (
@@ -43,30 +41,16 @@ export default function OrderList() {
           <TableRow>
             <TableCell style={{ color: 'white' }}>ID</TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
-              Restaurant
+              Customer Contact Number
             </TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
-              User Name
+              Order ID
             </TableCell>
+
             <TableCell align="right" style={{ color: 'white' }}>
-              Contact Number
+              Feed Back
             </TableCell>
-            <TableCell align="right" style={{ color: 'white' }}>
-              Region
-            </TableCell>
-            <TableCell align="right" style={{ color: 'white' }}>
-              Address
-            </TableCell>
-            <TableCell align="right" style={{ color: 'white' }}>
-              Status
-            </TableCell>
-            
-            <TableCell align="right" style={{ color: 'white' }}>
-              Total Bill
-            </TableCell>
-            <TableCell align="right" style={{ color: 'white' }}>
-              Order Details
-            </TableCell>
+
             <TableCell align="right" style={{ color: 'white' }}>
               Action
             </TableCell>
@@ -79,40 +63,20 @@ export default function OrderList() {
                 {row.id}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.user_id}
+                {row.customer_number}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.user_name}
+                {row.order_id}
               </TableCell>
+
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.contact_no}
+                {row.feed_back}
               </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {row.region}
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {row.address}
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {row.status}
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {row.total_bill}
-              </TableCell>
+
               <TableCell align="right" style={{ color: 'white' }}>
                 {
                   <Grid item xs={8}>
-                    
-                    <DetailsIcon />
-                  
-                  </Grid>
-                }
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {
-                  <Grid item xs={8}>
-                   
-                    <EditIcon /> 
+                    <EditIcon />
                     <DeleteIcon />
                   </Grid>
                 }

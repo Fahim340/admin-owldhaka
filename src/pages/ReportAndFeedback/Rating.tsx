@@ -11,6 +11,8 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Grid from '@material-ui/core/Grid';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import DetailsIcon from '@material-ui/icons/Details';
+import ButtonBase from '@material-ui/core/ButtonBase';
 
 const useStyles = makeStyles({
   table: {
@@ -19,17 +21,17 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(id, item_name, food_category, restaurant, food_image, description) {
-  return { id, item_name, food_category, restaurant, food_image, description };
+function createData(id, customer_number, food_id, item, restaurant_id, restaurant, rating) {
+  return { id, customer_number, food_id, item, restaurant_id, restaurant, rating };
 }
 
 const rows = [
-  createData('1', 'Beef Chap', 'Kebab', 'Bismillah', 'image', 'description'),
-  createData('1', 'Beef Chap', 'Kebab', 'Bismillah', 'image', 'description'),
-  createData('1', 'Beef Chap', 'Kebab', 'Bismillah', 'image', 'description'),
+  createData('1', '01676217481', '12', 'Biriyani', '1', 'Hazi', '4.5'),
+  createData('2', '01676217481', '33', 'Biriyani', '2', 'Hanif', '4.2'),
+  createData('3', '01676217481', '23', 'Beef chap', '3', 'Bismillah', '3'),
 ];
 
-export default function FoodItemList() {
+export default function Rating() {
   const classes = useStyles();
 
   return (
@@ -39,17 +41,24 @@ export default function FoodItemList() {
           <TableRow>
             <TableCell style={{ color: 'white' }}>ID</TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
-              Item Name
+              Customer Contact Number
             </TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
-              Food Caregory
+              Food Item ID
             </TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
-              Food Image
+              Item
             </TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
-              Description
+              Restaurant ID
             </TableCell>
+            <TableCell align="right" style={{ color: 'white' }}>
+              Restaurant
+            </TableCell>
+            <TableCell align="right" style={{ color: 'white' }}>
+              Rating
+            </TableCell>
+
             <TableCell align="right" style={{ color: 'white' }}>
               Action
             </TableCell>
@@ -62,21 +71,28 @@ export default function FoodItemList() {
                 {row.id}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.item_name}
+                {row.customer_number}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.food_category}
+                {row.food_id}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.food_image}
+                {row.item}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.description}
+                {row.restaurant_id}
               </TableCell>
+              <TableCell align="right" style={{ color: 'white' }}>
+                {row.restaurant}
+              </TableCell>
+              <TableCell align="right" style={{ color: 'white' }}>
+                {row.rating}
+              </TableCell>
+
               <TableCell align="right" style={{ color: 'white' }}>
                 {
                   <Grid item xs={8}>
-                    <EditIcon /> <VisibilityOffIcon />
+                    <EditIcon />
                     <DeleteIcon />
                   </Grid>
                 }

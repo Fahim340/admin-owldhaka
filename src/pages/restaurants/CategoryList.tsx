@@ -19,17 +19,13 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(id, item_name, food_category, restaurant, food_image, description) {
-  return { id, item_name, food_category, restaurant, food_image, description };
+function createData(id, category, action) {
+  return { id, category, action };
 }
 
-const rows = [
-  createData('1', 'Beef Chap', 'Kebab', 'Bismillah', 'image', 'description'),
-  createData('1', 'Beef Chap', 'Kebab', 'Bismillah', 'image', 'description'),
-  createData('1', 'Beef Chap', 'Kebab', 'Bismillah', 'image', 'description'),
-];
+const rows = [createData('1', 'Biriyani'), createData('2', 'Kabab & Biriyani'), createData('3', 'Kabab')];
 
-export default function FoodItemList() {
+export default function CategoryList() {
   const classes = useStyles();
 
   return (
@@ -38,18 +34,11 @@ export default function FoodItemList() {
         <TableHead>
           <TableRow>
             <TableCell style={{ color: 'white' }}>ID</TableCell>
+
             <TableCell align="right" style={{ color: 'white' }}>
-              Item Name
+              Restaurant Category
             </TableCell>
-            <TableCell align="right" style={{ color: 'white' }}>
-              Food Caregory
-            </TableCell>
-            <TableCell align="right" style={{ color: 'white' }}>
-              Food Image
-            </TableCell>
-            <TableCell align="right" style={{ color: 'white' }}>
-              Description
-            </TableCell>
+
             <TableCell align="right" style={{ color: 'white' }}>
               Action
             </TableCell>
@@ -61,17 +50,9 @@ export default function FoodItemList() {
               <TableCell component="th" scope="row" style={{ color: 'white' }}>
                 {row.id}
               </TableCell>
+
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.item_name}
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {row.food_category}
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {row.food_image}
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {row.description}
+                {row.category}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
                 {

@@ -19,7 +19,7 @@ const Input = styled(InputGroup)`
   margin-bottom: 10px;
 `;
 
-const AddFoodCategory = () => {
+const AddRestaurantCategory = () => {
   const [checkbox, setCheckbox] = useState({
     1: false,
     2: false,
@@ -38,18 +38,10 @@ const AddFoodCategory = () => {
       <Row>
         <Col breakPoint={{ xs: 12, md: 6 }}>
           <Card>
-            <header>Food Category</header>
+            <header>Add Restaurant Category</header>
             <CardBody>
-              <Input fullWidth size="Medium">
-                <input type="text" placeholder="Food Category" />
-              </Input>
-              <Input fullWidth size="Medium">
-                <input type="file" id="img" name="img" accept="image/*" />
-                <label for="fileupload"> ( Image)</label>
-              </Input>
-
-              <Input fullWidth size="Large">
-                <input type="text" placeholder="Description" />
+              <Input fullWidth size="Small">
+                <input type="text" placeholder="Restaurant Category" />
               </Input>
             </CardBody>
           </Card>
@@ -58,4 +50,4 @@ const AddFoodCategory = () => {
     </>
   );
 };
-export default AddFoodCategory;
+export default AddRestaurantCategory;

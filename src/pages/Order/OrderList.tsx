@@ -14,23 +14,48 @@ import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import DetailsIcon from '@material-ui/icons/Details';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
-
-
 const useStyles = makeStyles({
   table: {
-    background: '#202842',
+    background: '#232b45',
     minWidth: 650,
   },
 });
 
-function createData(id, user_id, user_name, contact_no, region, address, status, total_bill, order_details, action) {
-            return {id, user_id, user_name, contact_no, region, address, status, total_bill, order_details , action};
+function createData(id, user_email, user_name, contact_no, region, address, status, total_bill, order_details, action) {
+  return { id, user_email, user_name, contact_no, region, address, status, total_bill, order_details, action };
 }
 
 const rows = [
-  createData('1', 'fk2311', 'Fahim Khan', '01676217481', 'Dhanmindi', 'H-30/A, Road 15,Dhanmondi,Dhaka ','delivering', '590' ),
-  createData('1', 'fk2311', 'Fahim Khan', '01676217481', 'Dhanmindi', 'H-30/A, Road 15,Dhanmondi,Dhaka ','delivering', '590' ),
-  createData('1', 'fk2311', 'Fahim Khan', '01676217481', 'Dhanmindi', 'H-30/A, Road 15,Dhanmondi,Dhaka ','delivering', '590' ),
+  createData(
+    '1',
+    'fahimkhan340@gmail.com',
+    'Fahim Khan',
+    '01676217481',
+    'Dhanmindi',
+    'H-30/A, Road 15,Dhanmondi,Dhaka ',
+    'delivering',
+    '590',
+  ),
+  createData(
+    '1',
+    'fahimkhan340@gmail.com',
+    'Fahim Khan',
+    '01676217481',
+    'Dhanmindi',
+    'H-30/A, Road 15,Dhanmondi,Dhaka ',
+    'delivering',
+    '590',
+  ),
+  createData(
+    '1',
+    'fahimkhan340@gmail.com',
+    'Fahim Khan',
+    '01676217481',
+    'Dhanmindi',
+    'H-30/A, Road 15,Dhanmondi,Dhaka ',
+    'delivering',
+    '590',
+  ),
 ];
 
 export default function OrderList() {
@@ -43,7 +68,7 @@ export default function OrderList() {
           <TableRow>
             <TableCell style={{ color: 'white' }}>ID</TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
-              User ID
+              User Email
             </TableCell>
             <TableCell align="right" style={{ color: 'white' }}>
               User Name
@@ -60,7 +85,7 @@ export default function OrderList() {
             <TableCell align="right" style={{ color: 'white' }}>
               Status
             </TableCell>
-            
+
             <TableCell align="right" style={{ color: 'white' }}>
               Total Bill
             </TableCell>
@@ -79,7 +104,7 @@ export default function OrderList() {
                 {row.id}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.user_id}
+                {row.user_email}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
                 {row.user_name}
@@ -102,17 +127,14 @@ export default function OrderList() {
               <TableCell align="right" style={{ color: 'white' }}>
                 {
                   <Grid item xs={8}>
-                    
                     <DetailsIcon />
-                  
                   </Grid>
                 }
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
                 {
                   <Grid item xs={8}>
-                   
-                    <EditIcon /> 
+                    <EditIcon />
                     <DeleteIcon />
                   </Grid>
                 }

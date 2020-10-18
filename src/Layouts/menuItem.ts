@@ -166,13 +166,18 @@ const items: MenuItemType[] = [
   },
   */
 
-
-
-  
   {
     title: 'Restaurant',
     icon: { name: 'star-outline' },
     children: [
+      {
+        title: 'Restaurant Category',
+        link: { to: '/restaurants/CategoryList' },
+      },
+      {
+        title: 'Add New Restaurant Category',
+        link: { to: '/restaurants/AddRestaurantCategory' },
+      },
       {
         title: 'Restaurant List',
         link: { to: '/restaurants/restaurantList' },
@@ -187,7 +192,6 @@ const items: MenuItemType[] = [
     title: 'Food Item',
     icon: { name: 'star-outline' },
     children: [
-      
       {
         title: 'Food Category',
         link: { to: '/FoodCategory/FoodCategoryList' },
@@ -206,7 +210,7 @@ const items: MenuItemType[] = [
       },
     ],
   },
-  
+
   {
     title: 'Order',
     icon: { name: 'star-outline' },
@@ -216,12 +220,12 @@ const items: MenuItemType[] = [
         link: { to: '/Order/OrderList' },
       },
       {
-        title: 'New Orders',
-        link: { to: '/restaurants/restaurantList' },
+        title: 'Order Status',
+        link: { to: '/Order/OrderStatus' },
       },
       {
-        title: 'manually add order',
-        link: { to: '/restaurants/AddRestaurants' },
+        title: 'New Orders',
+        link: { to: '/Order/OrderDetails' },
       },
     ],
   },
@@ -230,17 +234,19 @@ const items: MenuItemType[] = [
     icon: { name: 'star-outline' },
     children: [
       {
-        title: 'rating & Feedback',
-        link: { to: '/Order/OrderList' },
+        title: 'Rating',
+        link: { to: '/ReportAndFeedback/Rating' },
       },
       {
-        title: 'report',
-        link: { to: '/restaurants/restaurantList' },
+        title: 'Rating & Feedback',
+        link: { to: '/ReportAndFeedback/FeedBack' },
       },
-      
+      {
+        title: 'Delivery Rating & FeedBack',
+        link: { to: '/ReportAndFeedback/DeliveryFeedBack' },
+      },
     ],
   },
-
 ];
 
 export default items;

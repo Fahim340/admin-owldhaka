@@ -14,7 +14,7 @@ import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 
 const useStyles = makeStyles({
   table: {
-    background: '#202842',
+    background: '#232b45',
     minWidth: 650,
   },
 });

@@ -47,24 +47,25 @@ const AddFoodItem = () => {
                 <input type="text" placeholder="Food Category" />
               </Input>
               <Input fullWidth size="Medium">
-                <input type="text" placeholder="Restaturant Name"/>
+                <input type="text" placeholder="Restaturant Name" />
               </Input>
               <Input fullWidth size="Medium">
-              <input type="file" id="img" name="img" accept="image/*" />
-              <label for ="fileupload">  ( Upload Food Image )</label>
+                <input type="file" id="img" name="img" accept="image/*" />
+                <label for="fileupload"> ( Upload Food Image )</label>
               </Input>
+              <Input fullWidth size="Medium">
+                <input type="text" placeholder="Regular Price" />
+              </Input>
+              <Input fullWidth size="Medium">
+                <input type="text" placeholder="Selling Price" />
+              </Input>
+
               <Input fullWidth shape="Round">
-                <textarea rows={5} placeholder="Description"/>
+                <textarea rows={5} placeholder="Description" />
               </Input>
-              
-              
-              
-              
-              
             </CardBody>
           </Card>
         </Col>
-        
       </Row>
     </>
   );
