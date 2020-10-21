@@ -13,8 +13,6 @@ import Grid from '@material-ui/core/Grid';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import axios from 'axios';
 
-import React, { useState, useEffect } from 'react';
-
 const useStyles = makeStyles({
   table: {
     background: '#232b45',
@@ -33,13 +31,23 @@ const rows = [
 ];
 
 export default function restaurantList() {
-  const [data, setData] = useState({ persons: [] });
+  let [responseData, setResponseData] = React.useState('');
 
-  useEffect(async () => {
-    const result = await axios('https://jsonplaceholder.typicode.com/users');
+  const fetchData = React.useCallback(() => {
+    axios
+      .get('https://jsonplaceholder.typicode.com/users')
+      .then((response) => {
+        setResponseData(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-    setData(result.data);
-  });
+  React.useEffect(() => {
+    fetchData();
+  }, [fetchData]);
   /*   let persons= []
 
 
@@ -77,7 +85,7 @@ export default function restaurantList() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.persons.map((person) => (
+          {responseData.map((person) => (
             <TableRow key={person.id}>
               <TableCell component="th" scope="row" style={{ color: 'white' }}>
                 {person.id}
@@ -104,6 +112,7 @@ export default function restaurantList() {
               </TableCell>
             </TableRow>
           ))}
+          ;
         </TableBody>
       </Table>
     </TableContainer>
