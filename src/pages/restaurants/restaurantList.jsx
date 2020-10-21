@@ -38,7 +38,6 @@ export default function restaurantList() {
       .get('https://jsonplaceholder.typicode.com/users')
       .then((response) => {
         setResponseData(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -85,34 +84,34 @@ export default function restaurantList() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {responseData.map((person) => (
-            <TableRow key={person.id}>
-              <TableCell component="th" scope="row" style={{ color: 'white' }}>
-                {person.id}
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {person.name}
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {person.name}
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {person.name}
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {person.name}
-              </TableCell>
-              <TableCell align="right" style={{ color: 'white' }}>
-                {
-                  <Grid item xs={8}>
-                    <EditIcon /> <VisibilityOffIcon />
-                    <DeleteIcon />
-                  </Grid>
-                }
-              </TableCell>
-            </TableRow>
-          ))}
-          ;
+          {responseData &&
+            responseData.map((person) => (
+              <TableRow key={person.id}>
+                <TableCell component="th" scope="row" style={{ color: 'white' }}>
+                  {person.id}
+                </TableCell>
+                <TableCell align="right" style={{ color: 'white' }}>
+                  {person.name}
+                </TableCell>
+                <TableCell align="right" style={{ color: 'white' }}>
+                  {person.name}
+                </TableCell>
+                <TableCell align="right" style={{ color: 'white' }}>
+                  {person.name}
+                </TableCell>
+                <TableCell align="right" style={{ color: 'white' }}>
+                  {person.name}
+                </TableCell>
+                <TableCell align="right" style={{ color: 'white' }}>
+                  {
+                    <Grid item xs={8}>
+                      <EditIcon /> <VisibilityOffIcon />
+                      <DeleteIcon />
+                    </Grid>
+                  }
+                </TableCell>
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
     </TableContainer>
