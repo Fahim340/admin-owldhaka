@@ -345,7 +345,7 @@ export default function OrderList() {
                 </TableContainer>
               </Tab>
               <Tab
-                title="Cpmplete"
+                title="Complete"
                 icon="icon ion-ios-switch"
                 badge={{ status: 'Success', title: '11', position: 'topStart' }}
                 responsive

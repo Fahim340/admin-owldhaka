@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -11,6 +11,9 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Grid from '@material-ui/core/Grid';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import axios from 'axios';
+
+import React, { useState, useEffect } from 'react';
 
 const useStyles = makeStyles({
   table: {
@@ -30,6 +33,24 @@ const rows = [
 ];
 
 export default function restaurantList() {
+  const [data, setData] = useState({ persons: [] });
+
+  useEffect(async () => {
+    const result = await axios('https://jsonplaceholder.typicode.com/users');
+
+    setData(result.data);
+  });
+  /*   let persons= []
+
+
+  await axios.get('https://jsonplaceholder.typicode.com/users')
+    .then(response => {
+      persons= response.data
+    })
+
+
+  */
+
   const classes = useStyles();
 
   return (
@@ -56,22 +77,22 @@ export default function restaurantList() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
+          {data.persons.map((person) => (
+            <TableRow key={person.id}>
               <TableCell component="th" scope="row" style={{ color: 'white' }}>
-                {row.id}
+                {person.id}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.name}
+                {person.name}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.category}
+                {person.name}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.location}
+                {person.name}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
-                {row.address}
+                {person.name}
               </TableCell>
               <TableCell align="right" style={{ color: 'white' }}>
                 {

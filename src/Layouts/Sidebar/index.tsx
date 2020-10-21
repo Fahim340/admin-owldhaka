@@ -28,7 +28,7 @@ const SidebarCustom: React.ForwardRefRenderFunction<Omit<SidebarRefObject, 'hide
   };
 
   return (
-    <Sidebar getState={getState} ref={sidebarRef} property="start" containerFixed responsive className="menu-sidebar">
+    <Sidebar ref={sidebarRef} property="start" containerFixed responsive className="menu-sidebar">
       {seeHeader && (
         <header>
           <Button
